@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  overscroll-behavior-y: contain;
+  font-family: 'Sarabun', sans-serif;
+}
+
+div, span, label {
+  font-family: 'Sarabun', sans-serif;
+}
+
+.header {
+  padding: 0;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 3;
+}
+
+.header-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .ant-menu-title-content {
+    display: none !important;
+  }
+
+  .footer-layout {
+    padding: 24px 10px 24px 0 !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .ant-table-thead {
+    display: none; /* ซ่อน header */
+  }
+
+  .ant-table-tbody tr {
+    display: block; /* ทำให้แถวเป็นบล็อก */
+    margin-bottom: 20px; /* เพิ่มระยะห่างระหว่างแถว */
+  }
+
+  .ant-table-tbody td {
+    display: block; /* ให้ td แสดงในลักษณะบล็อก */
+    text-align: right; /* จัดตำแหน่งข้อความทางขวา */
+    padding: 8px;
+    border-bottom: 1px solid #f0f0f0; /* เพิ่มเส้นขอบที่ด้านล่าง */
+  }
+
+  .ant-table-tbody td:before {
+    content: attr(data-label); /* ใช้สำหรับแสดงชื่อคอลัมน์เป็น label */
+    font-weight: bold;
+    margin-right: 8px;
+  }
+}
+
+/* สำหรับหน้าจอที่มีขนาดใหญ่กว่า 768px */
+@media (min-width: 769px) {
+  .ant-table-tbody tr {
+    display: table-row; /* ให้แถวแสดงเป็นแถวปกติ */
+  }
+
+  .ant-table-tbody td {
+    display: table-cell; /* ให้ cell แสดงเป็นเซลล์ */
+    padding: 8px;
+    border-bottom: 1px solid #f0f0f0; /* เพิ่มเส้นขอบ */
+  }
+}
+
+@media (max-width: 768px) and (orientation: landscape) {
+  .content-body {
+    display: none;
+  }
+
+  .landscape-warning {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    font-size: 20px;
+    text-align: center;
+    display: block !important;
+  }
+}
+
+.product-description-table {
+  display: flex;
+}
+
+.ant-input-number-outlined.ant-input-number-disabled input[disabled],
+.ant-input-number-outlined[disabled] input[disabled],
+.ant-input-number-outlined.ant-input-number-disabled textarea[disabled],
+.ant-input-number-outlined[disabled] textarea[disabled] {
+  background-color: #dbdbdb;
+}
+
+.centered-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.full-screen-popup {
+  width: 100% !important; /* กำหนดให้ popup เต็มหน้าจอ */
+  height: 100% !important; /* กำหนดให้สูงเต็มหน้าจอ */
+  display: flex;
+  justify-content: center; /* จัดกลางแนวนอน */
+  align-items: center; /* จัดกลางแนวตั้ง */
+  border-radius: 0; /* ไม่มีการมุม */
+  background: transparent !important; /* ไม่มีพื้นหลัง */
+}
+
+.swal2-container {
+  z-index: 9999 !important; /* ปรับ z-index ให้สูงที่สุด */
+}
