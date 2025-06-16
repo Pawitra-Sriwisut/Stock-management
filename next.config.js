@@ -4,13 +4,18 @@ const nextConfig = {
     return [
       {
         source: "/",
-        destination: "/stock/home", // เปลี่ยนเส้นทางไปยังหน้า /home
-        permanent: true, // การเปลี่ยนเส้นทางแบบถาวร
+        destination: "/stock/home",
+        permanent: true,
+      },
+      {
+        source: "/stock",
+        destination: "/stock/home",
+        permanent: true,
       },
     ];
   },
   images: {
-    domains: ['drive.google.com'], // เพิ่มโดเมนของ Google Drive
+    domains: ["drive.google.com"], // เพิ่มโดเมนของ Google Drive
   },
 };
 
